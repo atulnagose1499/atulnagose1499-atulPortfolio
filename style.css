@@ -85,7 +85,7 @@ nav ul li a:hover::after {
 #about {
   padding: 80px 0;
   color: #ababab;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .row {
   display: flex;
@@ -370,7 +370,15 @@ nav .hidden {
   #about {
     height: 100vh;
   }
+  .bar {
+    width: 300px;
+    height: 25px;
+  }
   .copyright {
     font-size: 14px;
+  }
+
+  #upload {
+    margin-top: 67%;
   }
 } ;
