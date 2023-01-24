@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/57427fa09b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!-- header section -->
+    <header id="header">
+      <div class="container">
+        <!-- nav start -->
+        <nav>
+          <img src="./images/Frame 2.svg" class="logo" alt="logo" />
+          <ul id="sidemenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#upload">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i
+              class="hidden fa-regular fa-circle-xmark"
+              onclick="closemenu()"
+            ></i>
+          </ul>
+
+          <i class="hidden fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <!-- nav End -->
+        <section class="header-text">
+          <p>Frontend Designer <span id="and">&</span> Developer</p>
+          <h1>
+            Hi, I'm <span>Atul</span> <br />
+            Nagose From India
+          </h1>
+        </section>
+      </div>
+    </header>
+    <main>
+      <!-- About section -->
+      <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="about-col-1">
+              <img src="./images/hero2.jpg" alt="user images" />
+            </div>
+            <div class="about-col-2">
+              <h1 class="sub-title">About Us</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
+                corporis voluptates voluptate numquam placeat tempore nostrum
+                porro praesentium molestias sed veritatis aliquid est quia id
+                quaerat exercitationem, perspiciatis maxime, nemo aspernatur
+                iusto consectetur distinctio? Minus iure deleniti inventore
+                voluptatibus, dolorum laudantium fuga dolor, quaerat, obcaecati
+                totam veritatis dicta placeat
+              </p>
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">
+                  Skills
+                </p>
+                <p class="tab-links" onclick="opentab('experience')">
+                  Experience
+                </p>
+                <p class="tab-links" onclick="opentab('education')">
+                  Education
+                </p>
+              </div>
+
+              <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li>
+                    <span>UI/UX with Figma </span><br />Desinging Web/App
+                    interfaces
+                  </li>
+                  <li>
+                    <span>HTML CSS Javascript </span><br />responsive web design
+                  </li>
+                  <li>
+                    <span>familiar with reactjs </span><br />single page
+                    application
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li>
+                    <span>UI/UX with Figma </span><br />Desinging Web/App
+                    interfaces
+                  </li>
+                  <li>
+                    <span>HTML CSS Javascript </span><br />responsive web design
+                  </li>
+                  <li>
+                    <span>familiar with reactjs </span><br />single page
+                    application
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li>
+                    <span>UI/UX with Figma </span><br />Desinging Web/App
+                    interfaces
+                  </li>
+                  <li>
+                    <span>HTML CSS Javascript </span><br />responsive web design
+                  </li>
+                  <li>
+                    <span>familiar with reactjs </span><br />single page
+                    application
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="upload">
+        <!-- <div class="container"> -->
+        <input
+          type="file"
+          class="inputFile"
+          id="fileInp"
+          onchange="getFile(event)"
+          accept="image/png, image/jpeg"
+        />
+        <label for="fileInp">+</label>
+        <span class="fileText"></span>
+        <button class="btn2">Upload Image</button>
+        <div class="bar">
+          <div class="progress"></div>
+        </div>
+        <div class="uploadPercentage">0%</div>
+        <article id="gallery">
+          <!-- <div class="container"> -->
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+            <img
+              class="card"
+              src="https://images.unsplash.com/photo-1661956602926-db6b25f75947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=398&q=80"
+              alt=""
+              width="150px"
+            />
+          </div>
+        </article>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+              <h1 class="sub-title">Contact Us</h1>
+              <br />
+              <i class="fa-solid fa-envelope"></i
+              ><a href="mailto:atulnagose1499@gmail.com"
+                >atulnagose1499@gmail.com</a
+              >
+              <br />
+              <br />
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:9561471054">9561471054</a>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="contact-right">
+              <form action="">
+                <input
+                  type="text"
+                  name="Name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <textarea
+                  name="Message"
+                  rows="6"
+                  placeholder="Your Message"
+                ></textarea>
+                <button class="btn2" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="copyright">
+        <p>
+          Copyright Jan 2023 © Atul. <i class="fa-solid fa-heart"></i> Personal
+          Portfolio
+        </p>
+      </div>
+    </main>
+    <script>
+      var tablinks = document.getElementById("tab-links");
+      var tabcontents = document.getElementById("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+      }
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
