@@ -1,3 +1,5 @@
+
+// about hide section
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
@@ -12,6 +14,7 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 }
 
+// sidemenu  nav
 var sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {
@@ -20,3 +23,9 @@ function openmenu() {
 function closemenu() {
   sidemenu.style.right = "-200px";
 }
+
+//
+// Add event listener to form's submit button
+
+
+// ===== upload image======//
