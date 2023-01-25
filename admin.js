@@ -1,69 +1,105 @@
-// Get data from local storage
-var name1 = localStorage.getItem("fname");
-var email = localStorage.getItem("email");
-var message = localStorage.getItem("message");
-// Create new table row
-var row = document.createElement("tr");
-// Create new table cells
-var nameCell = document.createElement("td");
-var emailCell = document.createElement("td");
-var messageCell = document.createElement("td");
-// Insert data into cells
-nameCell.innerHTML = name1;
-emailCell.innerHTML = email;
-messageCell.innerHTML = message;
+//  <!-- frame user set Upload img section -->
+// Add event listener to form
+document.getElementById("image-form").addEventListener("submit", saveImage);
 
-// Append cells to row
-row.appendChild(nameCell);
-row.appendChild(emailCell);
-row.appendChild(messageCell);
-// Append row to table
-document.getElementById("myTable").appendChild(row);
+function saveImage(e) {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  // Get image file
+  let image = document.getElementById("image").files[0];
+  let reader = new FileReader();
+  reader.onloadend = function () {
+    let imageData = reader.result;
+    // Check if images exist in local storage
+    if (localStorage.getItem("images") === null) {
+      // If not, create a new array and add image
+      let images = [];
+      images.push(imageData);
+      localStorage.setItem("images", JSON.stringify(images));
+    } else {
+      // If yes, get images and add new image
+      let images = JSON.parse(localStorage.getItem("images"));
+      images.push(imageData);
+      localStorage.setItem("images", JSON.stringify(images));
+    }
+  };
+  reader.readAsDataURL(image);
+}
+
+// user table
+// Check if contacts exist in local storage
+if (localStorage.getItem("contacts") !== null) {
+  // If yes, get contacts
+  let contacts = JSON.parse(localStorage.getItem("contacts"));
+
+  // Loop through contacts and add to table
+  contacts.forEach(function (contact, index) {
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+    <td>${contact.name}</td>
+    <td>${contact.email}</td>
+    <td>${contact.message}</td>
+    <td><button class="delete-btn" data-index="${index}">Delete</button></td>
+  `;
+
+    document.getElementById("contacts").children[1].appendChild(row);
+  });
+}
+
+// Add event listener to delete buttons
+let deleteBtns = document.getElementsByClassName("delete-btn");
+for (let i = 0; i < deleteBtns.length; i++) {
+  deleteBtns[i].addEventListener("click", deleteData);
+}
+
+function deleteData(e) {
+  // Get index of contact to delete
+  let index = e.target.dataset.index;
+
+  // Get contacts from local storage
+  let contacts = JSON.parse(localStorage.getItem("contacts"));
+
+  // Remove contact from array
+  contacts.splice(index, 1);
+
+  // Update local storage
+  localStorage.setItem("contacts", JSON.stringify(contacts));
+
+  // Reload page to update table
+  location.reload();
+}
 
 // ====================
 // /================================================================ upload================================//
 
-var form = document.getElementById("form");
+// var form = document.getElementById("form");
 
-var parentDiv = document.getElementById("result");
+// var parentDiv = document.getElementById("result");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  var reader = new FileReader();
+//   var reader = new FileReader();
 
-  var name = document.getElementById("image").files[0].name;
+//   var name = document.getElementById("image").files[0].name;
 
-  reader.addEventListener("load", function () {
-    if (this.result && localStorage) {
-      window.localStorage.setItem(name, this.result);
-      alert("image stored in local storage");
-      parentDiv.innerHTML = "";
-      showImages();
-    } else {
-      alert("not successful");
-    }
-  });
+//   reader.addEventListener("load", function () {
+//     if (this.result && localStorage) {
+//       window.localStorage.setItem(name, this.result);
+//       alert("image stored in local storage");
+//       parentDiv.innerHTML = "";
+//       showImages();
+//     } else {
+//       alert("not successful");
+//     }
+//   });
 
-  reader.readAsDataURL(document.getElementById("image").files[0]);
-  console.log(name);
-});
+//   reader.readAsDataURL(document.getElementById("image").files[0]);
+//   console.log(name);
+// });
 
 // ==== show img from local storage ====
 
-function showImages() {
-  for (let i = 0; i < window.localStorage.length; i++) {
-    let res = window.localStorage.getItem(window.localStorage.key(i));
-    var image = new Image();
-    image.src = res;
-
-    parentDiv.appendChild(image);
-  }
-}
-
-function remove() {
-  window.localStorage.clear();
-  parentDiv.innerHTML = "";
-}
-
-showImages();
+// =============== user info=========

@@ -156,42 +156,39 @@ nav ul li a:hover::after {
 .tab-contents.active-tab {
   display: block;
 }
-/* ---------------Upload-------------- */
-#upload {
+/* <!-- frame user set --> */
+#userImages {
+  text-align: center;
+  /* font-size: 50px; */
+}
+#images {
   display: flex;
-  align-items: center;
-  /* height: 100vh; */
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 50px;
 }
-.inputFile {
-  display: none;
+
+#images div {
+  width: 200px;
+  margin: 10px;
+  position: relative;
 }
-label {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  margin-bottom: 10px;
-  font-size: 100px;
-  background: linear-gradient(45deg, blue, red);
-  cursor: pointer;
+
+#images img {
+  max-width: 100%;
 }
-.bar {
-  height: 50px;
-  width: 500px;
-  background: gray;
-  margin: 20px;
+
+#images button {
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
+  /* background-color: red; */
+  /* color: white; */
+  /* padding: 5px 10px; */
+  border: none;
+  /* cursor: pointer; */
 }
-.progress {
-  background: linear-gradient(12deg, red, blue);
-  height: 100%;
-  width: 5%;
-}
-.uploadPercentage {
-  font-size: 25px;
-}
+
+/* <!--end frame user set --> */
 
 /* Gallery */
 #gallery {
@@ -365,7 +362,7 @@ form .btn2:hover {
 
 /* admin start */
 
-table {
+/* table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -376,7 +373,7 @@ th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
-}
+} */
 
 /* ------------------------css for small screens------- */
 
@@ -448,6 +445,7 @@ nav .hidden {
   .contact-left,
   .contact-right {
     flex-basis: 100%;
+    margin-top: 50px;
   }
 
   #about {
@@ -461,14 +459,20 @@ nav .hidden {
     font-size: 14px;
   }
 
-  #upload {
-    margin-top: 67%;
-  }
   #gallery {
     margin-top: 10%;
   }
+
+  #userImages {
+    margin-top: 60%;
+    /* margin-left: 20%; */
+  }
+
+  #images {
+    margin-top: 10%;
+  }
   #G1 {
-    margin-top: 70%;
+    margin-top: 30%;
     margin-left: 10%;
   }
 } ;
