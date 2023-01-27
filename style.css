@@ -177,16 +177,7 @@ nav ul li a:hover::after {
   max-width: 100%;
 }
 
-#images button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-}
+
 
 /* <!--end frame user set --> */
 
