@@ -29,7 +29,7 @@ function closemenu() {
 
 // ===== upload image======//
 // ===== upload image======//
-// <!-- frame user set -->
+// <!-- frame user set --> 
 // Check if images exist in local storage
 if (localStorage.getItem("images") !== null) {
   // If yes, get images
