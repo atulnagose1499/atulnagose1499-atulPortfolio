@@ -43,7 +43,7 @@ if (localStorage.getItem("images") !== null) {
 
     let btn = document.createElement("button");
     // btn.innerHTML = "Delete";
-    // btn.classList.add("delete-btn");
+    // btn.classList.add("delete-btn"); 
     btn.setAttribute("data-index", index);
     // btn.addEventListener("click", deleteImage);
 
