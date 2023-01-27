@@ -41,10 +41,10 @@ if (localStorage.getItem("images") !== null) {
     img.src = image;
     img.setAttribute("data-index", index);
 
-    // let btn = document.createElement("button");
+    let btn = document.createElement("button");
     // btn.innerHTML = "Delete";
     // btn.classList.add("delete-btn");
-    // btn.setAttribute("data-index", index);
+    btn.setAttribute("data-index", index);
     // btn.addEventListener("click", deleteImage);
 
     let container = document.createElement("div");
