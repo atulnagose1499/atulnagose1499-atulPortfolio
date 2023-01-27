@@ -28,6 +28,7 @@ function closemenu() {
 // Add event listener to form's submit button
 
 // ===== upload image======//
+// ===== upload image======//
 // <!-- frame user set -->
 // Check if images exist in local storage
 if (localStorage.getItem("images") !== null) {
@@ -40,15 +41,29 @@ if (localStorage.getItem("images") !== null) {
     img.src = image;
     img.setAttribute("data-index", index);
 
+    // let btn = document.createElement("button");
+    // btn.innerHTML = "Delete";
+    // btn.classList.add("delete-btn");
+    // btn.setAttribute("data-index", index);
+    // btn.addEventListener("click", deleteImage);
 
     let container = document.createElement("div");
     container.appendChild(img);
-
+    // container.appendChild(btn);
 
     document.getElementById("images").appendChild(container);
   });
 }
 
+// function deleteImage(e) {
+//   let index = e.target.dataset.index;
+
+//   let images = JSON.parse(localStorage.getItem("images"));
+//   images.splice(index, 1);
+//   localStorage.setItem("images", JSON.stringify(images));
+
+//   location.reload();
+// }
 
 
 // ====== to load form data to local storage====
